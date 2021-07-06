@@ -1,0 +1,63 @@
+<!--FORMULARIO DE ADIÇÃO DE ATIVIDADES E [formGroup] É A TAG QUE DE RUIM-->
+<div class="container col-md-10">
+    <div class="card">
+        <div class="card-header">
+            <h4>Cadastrar Atividades</h4>
+        </div>
+        <div class="card-body">
+            <form action="" [formGroup]="formulario">         
+                 <div class="form-row"> 
+                    <div class="form-group">     
+                     <label for="">DESCRIÇÃO</label>
+                          <input id="descricao" formControlName="descricao" type="text" class="form-control" style="background-color: lightblue;">
+                     </div>
+                <br>     
+                <br>
+                     <div class="form-group">   
+                         <label for="selectStatus">STATUS</label>
+                         <select class="form-control" id="status" formControlName="status" style="background-color: lightblue;">
+                             <option>AGENDADA</option>
+                             <option>EM ANDAMENTO</option>
+                             <option>CONCLUIDA</option>
+                             </select>
+                     </div>
+                <br>
+                <br>
+
+                       <div class="form-group">
+                           <label for="selectPrioridade">PRIORIDADE</label>           
+                           <select class="form-control" id="prioridade" formControlName="prioridade" style="background-color: lightblue;">
+                                <option>ALTA</option>
+                                <option>MEDIA</option>
+                                <option>BAIXA</option>
+                            </select>
+                       </div>
+                <br>
+                <br>
+                       <div class="form-group">
+                            <label for="selectFuncionario">FUNCIONÁRIO</label>
+                             
+                           <select class="form-control" id="funcionario" formControlName="funcionario" style="background-color: lightblue;">
+                            <option *ngFor="let funcionario of nomeDosFuncionarios" [ngValue]="funcionario">
+                            
+                                {{ funcionario}}
+                                </option>
+                            </select>
+                        </div>
+                <br>
+                <br>
+                   <div class="form-group">
+                    <label for="dataPrevista">DATA PREVISTA</label>
+                      <input type="date" id="dataPrevista" formControlName="dataPrevista" value="2018-03-17 00:00" 
+                        placeholder="yyyy-MM-dd hh:mm" required  style="background-color: lightblue;"/>
+                    </div>
+                <div class="botao">
+                    <!--<button type="submit" class="btn btn-primary">Cadastrar</button>-->
+                    <button (click)="OnSubmit()" class="btn btn-danger">Cadastrar</button>
+               </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+

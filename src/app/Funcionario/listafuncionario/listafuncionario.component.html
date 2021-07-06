@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h4>Lista de Funcionarios</h4>
+        </div>
+        <div class="car-body">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col" style="text-align: center; background-color: green; color: honeydew;"> ID</th>
+                        <th scope="col"style="text-align: center; background-color: green; color: honeydew;">NOME</th>
+                        <th scope="col"style="text-align: center; background-color: green; color: honeydew;">CPF</th>
+                        <th scope="col"style="text-align: center; background-color: green; color: honeydew;">CARGO</th>
+                        <th scope="col"style="text-align: center; background-color: green; color: honeydew;">AÇÃO</th>
+                      </tr>
+                    </thead>
+                  <tbody>
+                      <tr *ngFor="let funcionario of funcionarios" class="text-center">
+                          <td>{{funcionario.id}}</td>
+                          <td>{{funcionario.nome}}</td>
+                          <td>{{funcionario.cpf}}</td>
+                          <td>{{funcionario.cargo}}</td>
+                          <td>
+                          <button (click)="Atualizar(funcionario)" class="btn btn-warning">Editar</button>
+                          <button (click)="Delete(funcionario)" class="btn btn-danger" style="margin-left: 5px;">Delete</button>
+                          </td>
+                      </tr>
+                  </tbody>
+            </table>
+        </div>
+        <div class="botao">
+            <button (click)="Listar()" class="btn btn-info">Listar</button>
+       </div>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<!--TABELA LISTA ATIVIDADES UM COMPONENTE RESPONSÁVEL POR LISTAR AS ATIVIDADES, CONTÉM
+DOIS BOTÕES DELETE E EDITA-->
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h4>Lista de Atividades</h4>
+        </div>
+        <div class="car-body">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col"style="text-align: center; background-color: green; color: honeydew;">DESCRIÇÃO</th>
+                        <th scope="col"style="text-align: center; background-color: green; color: honeydew;">STATUS</th>
+                        <th scope="col"style="text-align: center; background-color: green; color: honeydew;">PRIORIDADE</th>
+                        <th scope="col"style="text-align: center; background-color: green; color: honeydew;">FUNCIONARIO</th>
+                        <th scope="col"style="text-align: center; background-color: green; color: honeydew;">DT CADASTRO</th>
+                        <th scope="col"style="text-align: center; background-color: green; color: honeydew;">DT PREVISTA</th>
+                        <th scope="col"style="text-align: center; background-color: green; color: honeydew;">DT CONCLUSÃO</th>
+                        <th scope="col"style="text-align: center; background-color: green; color: honeydew;">AÇÃO</th>
+                      </tr>
+                    </thead>
+                  <tbody>
+                      <tr *ngFor="let atividade of atividades" class="text-center">
+                          <td>{{atividade.descricao}}</td>
+                          <td>{{atividade.status}}</td>
+                          <td>{{atividade.prioridade}}</td>
+                          <td>{{atividade.funcionario.nome}}</td>
+                          <td>{{atividade.dataCadastro}}</td>
+                          <td>{{atividade.dataPrevista}}</td>
+                          <td>{{atividade.dataConclusao}}</td>
+                         <td>
+                          <button (click)="Atualizar(atividade)" class="btn btn-warning">Editar</button>
+                          <button (click)="Delete(atividade)" class="btn btn-danger" style="margin-top: 5px;">Delete</button>
+                          </td>
+                      </tr>
+                  </tbody>
+            </table>
+        </div>
+             <div class="botao">
+            <button (click)="Listar()" class="btn btn-info">Listar</button>
+            </div>
+    </div>
+</div>

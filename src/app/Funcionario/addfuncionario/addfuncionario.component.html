@@ -1,0 +1,39 @@
+<div class="container col-md-10">
+  <div class="card">
+      <div class="card-header">
+          <h4>Cadastrar Funcionario</h4>
+      </div>
+      <div class="card-body">
+          <form action="" [formGroup]="formulario">         
+               <div class="form-row"> 
+                  <div class="form-group">     
+                   <label for="">NOME</label>
+                        <input id="nome" formControlName="nome" type="text" class="form-control" style="background-color: lightblue;">
+                   </div>
+              <br>     
+              <br>     
+                   <div class="form-group">   
+                       <label for="cpf">CPF</label>
+                       <input id="cpf" formControlName="cpf" type="text" class="form-control" style="background-color: lightblue;">
+                   </div>
+              <br>
+              <br>
+
+                     <div class="form-group">
+                         <label for="selectPrioridade">CARGO</label>           
+                         <input id="cargo" formControlName="cargo" type="text" class="form-control"  style="background-color: lightblue;">
+                     </div>
+              <br>
+              <br>
+              <div class="botao">
+                  <!--<button type="submit" class="btn btn-primary">Cadastrar</button>-->
+                  <button (click)="OnSubmit()" class="btn btn-danger">Cadastrar</button>
+             </div>
+          </div>
+          </form>
+      </div>
+  </div>
+</div>
+
+
+

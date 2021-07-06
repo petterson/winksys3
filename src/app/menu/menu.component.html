@@ -1,0 +1,28 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <!--LINKS DAS TABELAS E FORMULÁRIOS DOS COMPONENTES ATIVIDADE E FUNCIONARIOS 
+        NESTE COMPONENTE MENU (APP-COMPONENTE-HTML--RAIS) QUE SÃO RENDERIZADOS -->
+      <a routerLink="/listar" routerLinkActive="selected">Lista Ativida</a><br>
+      <a routerLink="/adicionar" routerLinkActive="selected">Cad Ativida</a><br>
+      <a routerLink="/listafuncionario" routerLinkActive="selected">Lista Funcio</a><br>
+      <a routerLink="/addfuncionario" routerLinkActive="selected">Cad Funcio</a><br>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button
+        (click)="drawer.toggle()" *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Welcome To ALL</span>
+    </mat-toolbar>
+<!-- NG COMPONENTE RESPONSÁVEL POR RENDERIZAR AS TABELA E FORMULÁRIOS NO APP-COMPONENTE-HTML 
+  RAIS QUE TECNICAMENTE É O COMPONENTE MENU -->
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
